@@ -1,0 +1,53 @@
+//import colors
+@use '../helpers/colors&fonts' as *;
+
+//RESET 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+h1 {
+    color: $heading;
+}
+
+p {
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+        padding: 10px;
+        img {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+@mixin buttons ($bg, $color) {
+        padding: 10px 35px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 1px 1px 5px $parag;
+        background-color: $bg;
+        color: $color;
+        font-family: $parag-family;
+        cursor: pointer;
+}
+
+@mixin flex ($js-cont, $align-items) {
+    display: flex;
+    justify-content: $js-cont;
+    align-items: $align-items;
+}

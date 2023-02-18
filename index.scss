@@ -1,0 +1,192 @@
+//import colors and fonts
+@use './SASS/helpers/colors&fonts' as *;
+//import globalRules
+@use './SASS/layouts/globalRules' as *;
+
+//start header 
+.header {
+    background-color: $txt-btn;
+    background-image: url(./images/bg-hero-desktop.svg);
+    background-size: 100% 100%;
+    padding: 0 50px;
+    .navBar {
+        @include flex (space-between, center);
+        padding: 20px;
+        .btn {
+            @include buttons(white, $heading)
+        }
+    }
+    .intro {
+        @include flex (center, center);
+        padding: 20px;
+        .desc {
+            max-width: 40%;
+            margin: 20px 0;
+            h1 {
+                font-family: $heading-family;
+                font-size: 40px;
+                padding-bottom: 30px;
+                line-height: 1.5;
+            }
+            p {
+                font-family: $parag-family;
+                color: $heading;
+                padding-right: 15px;
+                font-size: 18px;
+                padding-bottom: 20px;
+            }
+            .btn {
+                @include buttons($pink, $txt-btn)
+            }
+        }
+    }
+}
+//end header
+
+//start main => .container
+.container {
+    max-width: calc(100% - 130px);
+    margin: 100px auto;
+    section {
+        box-shadow: 1px 1px 10px $parag;
+        border-radius: 10px;
+        margin: 50px 0;
+        padding-left: 150px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .desc {
+            max-width: 40%;
+            padding: 20px;
+            margin-left: 130px;
+            h1 {
+                padding-bottom: 10px;
+                font-family: $heading-family;
+            }
+            p {
+                color: $parag;
+                line-height: 1.5;
+            }
+        }
+        .image {
+            max-width: 40%;
+        }
+    }
+}
+//end main => .container
+
+//start card
+.card-container {
+    position: relative;
+    width: 100%;
+}
+.card {
+    width: 350px;
+    box-shadow: 1px 1px 10px $parag;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    right: 50%;
+    top: 50px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    h1 {
+        padding: 20px 0;
+        font-size: 16px; 
+        font-family: $heading-family;     
+    }
+    .btn {
+        @include buttons($pink, $txt-btn)
+    }
+}
+//end card
+
+//start footer
+footer {
+    background-color: $heading;
+    color: $txt-btn;
+    margin-top: 160px;
+    padding-top: 100px;
+    padding-left: 130px;
+    padding-right: 130px;
+    font-family: $parag-family;
+    .logo {
+        padding: 20px 0;
+    }
+    .content {
+        @include flex (space-between, flex-start);
+        .social {
+            span {
+                display: inline-block;
+                padding: 10px;
+                font-size: 30px;
+            }
+        }
+    }
+    p {
+        text-align: right;
+        padding: 20px 0;
+    }
+}
+//end footer
+
+//start media queries
+@media (max-width: 992px) {
+
+    .header {
+        background-image: url(./images/bg-hero-mobile.svg);
+    }
+    .header .navBar .logo {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .header .navBar .tryIt button {
+        display: none;
+    }
+
+    .header .intro {
+        flex-direction: column;
+        text-align: center;
+        .desc {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .container {
+        padding: 0 10px;
+        max-width: 100%;
+    }
+    .container section {
+        flex-direction: column-reverse;
+        .desc, .image {
+            max-width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+
+    footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    footer .content {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        .social {
+            text-align: center;
+        }
+    }
+
+    footer p {
+        text-align: center;
+    }
+}
