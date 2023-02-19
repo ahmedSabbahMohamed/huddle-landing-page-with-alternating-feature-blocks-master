@@ -123,11 +123,6 @@ ul li img {
   max-width: 40%;
 }
 
-.card-container {
-  position: relative;
-  width: 100%;
-}
-
 .card {
   width: 40%;
   box-shadow: 1px 1px 10px hsl(208deg, 11%, 55%);
@@ -138,17 +133,18 @@ ul li img {
   z-index: 1;
   left: 50%;
   right: 50%;
-  top: 50px;
+  top: -10px;
   transform: translate(-50%, -50%);
   background-color: white;
 }
 .card h1 {
-  padding: 20px 0;
-  font-size: 16px;
+  padding-bottom: 20px;
+  font-size: 18px;
   font-family: "Poppins";
 }
 
 footer {
+  position: relative;
   background-color: hsl(192deg, 100%, 9%);
   color: hsl(193deg, 100%, 96%);
   margin-top: 160px;
@@ -202,8 +198,8 @@ footer p {
   .header .intro .desc {
     max-width: 100%;
   }
-  .card-container .card {
-    width: 320px;
+  footer .card {
+    width: 340px;
     padding: 30px;
   }
 }
