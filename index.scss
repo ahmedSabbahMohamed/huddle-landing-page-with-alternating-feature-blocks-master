@@ -35,9 +35,6 @@
                 font-size: 18px;
                 padding-bottom: 20px;
             }
-            .btn {
-                @include buttons($pink, $txt-btn)
-            }
         }
     }
 }
@@ -53,10 +50,7 @@
         margin: 50px 0;
         padding-left: 150px;
         padding: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        @include flex (center, center);
         .desc {
             max-width: 40%;
             padding: 20px;
@@ -83,9 +77,9 @@
     width: 100%;
 }
 .card {
-    width: 350px;
+    width: 40%;
     box-shadow: 1px 1px 10px $parag;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     border-radius: 10px;
     position: absolute;
@@ -99,9 +93,6 @@
         padding: 20px 0;
         font-size: 16px; 
         font-family: $heading-family;     
-    }
-    .btn {
-        @include buttons($pink, $txt-btn)
     }
 }
 //end card
@@ -120,11 +111,21 @@ footer {
     }
     .content {
         @include flex (space-between, flex-start);
+        .about li , .careers li {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         .social {
             span {
                 display: inline-block;
                 padding: 10px;
                 font-size: 30px;
+                cursor: pointer;
+                &:hover {
+                    color: $pink;
+                }
             }
         }
     }
@@ -142,7 +143,6 @@ footer {
         background-image: url(./images/bg-hero-mobile.svg);
     }
     .header .navBar .logo {
-        width: 50%;
         margin: 0 auto;
     }
     .header .navBar .tryIt button {
@@ -155,6 +155,11 @@ footer {
         .desc {
             max-width: 100%;
         }
+    }
+
+    .card-container .card {
+        width: 320px;
+        padding: 30px;
     }
 }
 

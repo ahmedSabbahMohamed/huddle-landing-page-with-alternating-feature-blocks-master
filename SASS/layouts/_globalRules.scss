@@ -46,6 +46,13 @@ ul {
         cursor: pointer;
 }
 
+.btn {
+    @include buttons($pink, $txt-btn);
+    &:hover {
+        opacity: .7;
+    }
+}
+
 @mixin flex ($js-cont, $align-items) {
     display: flex;
     justify-content: $js-cont;
